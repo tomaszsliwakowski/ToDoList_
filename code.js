@@ -26,6 +26,9 @@ function ShowList() {
       </li>`
   );
   list.innerHTML = display.join("");
+  if (data.length < 1) {
+    list.innerHTML = "Brak zadań";
+  }
 }
 
 function RemoveTodo(id) {
