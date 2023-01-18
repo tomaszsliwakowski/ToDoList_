@@ -11,12 +11,12 @@ btn.addEventListener("click", () => {
     let todo = { id, InputValue };
     listData = [todo, ...listData];
     AddStorage(listData);
-    ShowList();
+    ShowListToDo();
     input.value = "";
   }
 });
 
-function ShowList() {
+function ShowListToDo() {
   let data = GetStorage();
   let display = data.map(
     (item) =>
@@ -35,7 +35,7 @@ function RemoveTodo(id) {
   let data = GetStorage();
   let newData = data.filter((item) => Number(item.id) !== id);
   AddStorage(newData);
-  ShowList();
+  ShowListToDo();
 }
 
 function AddStorage(data) {
@@ -50,4 +50,4 @@ function GetStorage() {
   return storage;
 }
 
-window.addEventListener("DOMContentLoaded", ShowList());
+window.addEventListener("DOMContentLoaded", ShowListToDo());
